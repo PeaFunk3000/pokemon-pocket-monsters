@@ -11,6 +11,7 @@ function App() {
   return (
     <div className="App">
       <div className="header">
+        <img className="logo" src={process.env.PUBLIC_URL + '/logo192.png'} alt="Logo" />
         <button className={activeTab === 1 ? 'tab-button active' : 'tab-button'} onClick={() => handleTabClick(1)}>Tab 1</button>
         <button className={activeTab === 2 ? 'tab-button active' : 'tab-button'} onClick={() => handleTabClick(2)}>Tab 2</button>
         <button className={activeTab === 3 ? 'tab-button active' : 'tab-button'} onClick={() => handleTabClick(3)}>Tab 3</button>
