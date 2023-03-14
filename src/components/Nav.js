@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import "../styles/Nav.css";
+
 
 export default function Navbar() {
     // create state to determine if navbar expanded or not via boolean
@@ -29,8 +29,8 @@ export default function Navbar() {
     </div>
     <div className="links">
         <Link to="/">Home</Link>
-        <Link to="/projects">Pokedex</Link>
-        <Link to="/experience">TCG</Link>
+        <Link to="/pokedex">Pokedex</Link>
+        <Link to="/trading-card-game">TCG</Link>
     </div>
     </div>    
   )
