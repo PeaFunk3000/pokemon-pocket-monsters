@@ -1,3 +1,12 @@
+:root {
+  --first-color:#021939;
+  --second-color: #ffcb05;
+  --third-color:  #ef98a7;
+  --fourth-color: #807094;
+  --fifth-color: #604f71;
+}
+
+
 body {
   padding: 0;
   margin: 0;
