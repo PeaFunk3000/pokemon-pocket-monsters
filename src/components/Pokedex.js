@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import pokeAPI from "../utils/pokeAPI";
 import "./styles/Pokedex.css";
 import PokedexSearch from "./PokedexSearch";
+import ImageShuffle from './ImageShuffle';
 
 function Pokedex() {
     const [pokeResult, setPokeResult] = useState();
@@ -67,7 +68,7 @@ function Pokedex() {
     if (pokeResult !== undefined) {
         return (
             <div className="App">
-                <img id="background" src={process.env.PUBLIC_URL + `/images/background.png`} alt="background"></img>
+                <ImageShuffle/>
                 <div id="banner" >
                     <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
                     <img id="pokemon" src={process.env.PUBLIC_URL + "/images/pokemon.png"} alt="pokemon"></img>
@@ -89,7 +90,7 @@ function Pokedex() {
     } else if (isLoading === true) {
         return (
             <div className="App">
-                <img id="background" src={process.env.PUBLIC_URL + `/images/background.png`} alt="background"></img>
+                <ImageShuffle/>
                 <div id="banner" >
                     <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
                     <img id="pokemon" src={process.env.PUBLIC_URL + "/images/pokemon.png"} alt="pokemon"></img>
@@ -113,7 +114,7 @@ function Pokedex() {
     } else {
         return (
             <div className="App">
-                <img id="background" src={process.env.PUBLIC_URL + `/images/background.png`} alt="background"></img>
+                <ImageShuffle/>
                 <div id="banner" >
                     <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
                     <img id="pokemon" src={process.env.PUBLIC_URL + "/images/pokemon.png"} alt="pokemon"></img>

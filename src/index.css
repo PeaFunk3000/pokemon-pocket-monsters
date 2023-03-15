@@ -27,6 +27,5 @@ font-family: var(--font-secondary);
   position: fixed;
   top: 0;
   z-index: -10;
-  height: 100vh;
-  width: 100vw;
+  object-fit: contain;
 }
