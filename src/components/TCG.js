@@ -40,9 +40,11 @@ export default function TCG() {
                 throw new Error(res.data.message);
             }
             setTcgResults(res);
+            setIsLoading(false);
         })
         .catch(err => {
             console.log(err);
+            setIsLoading(false);
         });
 
         setSearchTerm("");
