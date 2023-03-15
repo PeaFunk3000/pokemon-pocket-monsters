@@ -1,89 +1,34 @@
-import React, { useState /*, useEffect*/ } from "react";
+import React, { useState } from "react";
 import pokeAPI from "../utils/pokeAPI";
-import tcgAPI from "../utils/tcgAPI";
 import "./styles/Pokedex.css";
 import PokedexSearch from "./PokedexSearch";
-// import Marketplace from "./Marketplace";
 
 function Pokedex() {
-    const [pokeResult, setPokeResult] = useState({
-        name: "",
-        image: "",
-        base_experience: "",
-        id: "",
-        height: "",
-        weight: "",
-        type: "",
-        hp: "",
-        attack: "",
-        defense: "",
-        special_attack: "",
-        special_defense: "",
-        speed: "",
-        abilities: [{ability: {name:"n/a"}}],
-        loaded: false
-    });
-    const [tcgResult, setTcgResults] = useState({
-        image: "",
-        lowPrice: "0.00",
-        trendPrice: "0.00",
-        avg1: "0.00",
-        avg7: "0.00",
-        avg30: "0.00",
-        updatedAt: "",
-        url: ""
-    })
+    const [pokeResult, setPokeResult] = useState();
     const [searchTerm, setSearchTerm] = useState("");
-    const [display, setDisplay] = useState("hide");
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleInputChange = event => {
         setSearchTerm(event.target.value);
     };
 
     const clearScreen = event => {
-        setDisplay("hide");
         resetPokeResult();
-        resetTcgResult();
+        setIsLoading(false);
     };
 
     const resetPokeResult = () => {
-        setPokeResult({
-            name: "",
-            image: "",
-            base_experience: "",
-            id: "",
-            height: "",
-            weight: "",
-            type: "",
-            hp: "",
-            attack: "",
-            defense: "",
-            special_attack: "",
-            special_defense: "",
-            speed: "",
-            abilities: [{ability: {name:"n/a"}}],
-            loaded: false
-        });
+        setPokeResult();
     };
-
-    const resetTcgResult = () => {
-        setTcgResults({
-            image: "",
-            lowPrice: "",
-            trendPrice: "",
-            avg1: "",
-            avg7: "",
-            avg30: "",
-            updatedAt: "",
-            url: ""
-        })
-    }
 
     const handleSubmitForm = e => {
         e.preventDefault();
-        if (!searchTerm) {
+        if (searchTerm === "") {
             return;
         };
+
+        setIsLoading(true);
+        resetPokeResult();
     
         pokeAPI.search(searchTerm)
         .then(res => {
@@ -93,7 +38,6 @@ function Pokedex() {
             if (res.data.status === "error") {
             throw new Error(res.data.message);
             }
-            resetPokeResult();
             setPokeResult({
                 name: res.data.name,
                 image: res.data.sprites.other["official-artwork"].front_default,
@@ -108,62 +52,89 @@ function Pokedex() {
                 special_attack: res.data.stats[3].base_stat,
                 special_defense: res.data.stats[4].base_stat,
                 speed: res.data.stats[5].base_stat,
-                abilities: res.data.abilities,
-                loaded: true
+                abilities: res.data.abilities
             });
-            setDisplay("");
-            setSearchTerm("");
+            setIsLoading(false);
         })
         .catch(err => {
             console.log(err);
-            
+            setIsLoading(false);
         });
 
-        tcgAPI.search(searchTerm)
-        .then(res => {
-            resetTcgResult();
-            setTcgResults({
-                image: res.data[0].images.small,
-                lowPrice: res.data[0].cardmarket.prices.lowPrice,
-                trendPrice: res.data[0].cardmarket.prices.trendPrice,
-                avg1: res.data[0].cardmarket.prices.avg1,
-                avg7: res.data[0].cardmarket.prices.avg7,
-                avg30: res.data[0].cardmarket.prices.avg30,
-                updatedAt: res.data[0].cardmarket.updatedAt,
-                url: res.data[0].cardmarket.url
-            })
-        })
+        setSearchTerm("");
     };
 
-
-    return (
-        <div className="App">
-            <img id="background" src={process.env.PUBLIC_URL + `/images/background.png`} alt="background"></img>
-            <div id="banner" >
-                <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
-                <img id="pokemon" src={process.env.PUBLIC_URL + "/images/pokemon.png"} alt="pokemon"></img>
-                <h1 id="searchLabel" className="text-center">Search</h1>
-                <input
-                    id="pokemonSearchInput"
-                    type="text"
-                    name="searchTerm"
-                    value={searchTerm.toLowerCase()}
-                    onChange={handleInputChange}
-                    placeholder="Search Pokémon"
-                />
-                <button id="submitBtn" onClick={handleSubmitForm}>Submit</button>
-                <button id="clearBtn" onClick={clearScreen}>Clear</button>
+    if (pokeResult !== undefined) {
+        return (
+            <div className="App">
+                <img id="background" src={process.env.PUBLIC_URL + `/images/background.png`} alt="background"></img>
+                <div id="banner" >
+                    <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
+                    <img id="pokemon" src={process.env.PUBLIC_URL + "/images/pokemon.png"} alt="pokemon"></img>
+                    <h1 id="searchLabel" className="text-center">Search</h1>
+                    <input
+                        id="pokemonSearchInput"
+                        type="text"
+                        name="searchTerm"
+                        value={searchTerm.toLowerCase()}
+                        onChange={handleInputChange}
+                        placeholder="Search Pokémon"
+                    />
+                    <button id="submitBtn" onClick={handleSubmitForm}>Submit</button>
+                    <button id="clearBtn" onClick={clearScreen}>Clear</button>
+                </div>
+                <PokedexSearch resultsObj = {pokeResult} />
             </div>
-            <PokedexSearch
-                display = {display}
-                resultsObj = {pokeResult}
-            />
-            {/* <Marketplace 
-                display = {display}
-                resultsObj = {tcgResult}
-            /> */}
-        </div>
-    );
+        );
+    } else if (isLoading === true) {
+        return (
+            <div className="App">
+                <img id="background" src={process.env.PUBLIC_URL + `/images/background.png`} alt="background"></img>
+                <div id="banner" >
+                    <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
+                    <img id="pokemon" src={process.env.PUBLIC_URL + "/images/pokemon.png"} alt="pokemon"></img>
+                    <h1 id="searchLabel" className="text-center">Search</h1>
+                    <input
+                        id="pokemonSearchInput"
+                        type="text"
+                        name="searchTerm"
+                        value={searchTerm.toLowerCase()}
+                        onChange={handleInputChange}
+                        placeholder="Search Pokémon"
+                    />
+                    <button id="submitBtn" onClick={handleSubmitForm}>Submit</button>
+                    <button id="clearBtn" onClick={clearScreen}>Clear</button>
+                </div>
+                <div>
+                    <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
+                </div>
+            </div>
+        )
+    } else {
+        return (
+            <div className="App">
+                <img id="background" src={process.env.PUBLIC_URL + `/images/background.png`} alt="background"></img>
+                <div id="banner" >
+                    <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
+                    <img id="pokemon" src={process.env.PUBLIC_URL + "/images/pokemon.png"} alt="pokemon"></img>
+                    <h1 id="searchLabel" className="text-center">Search</h1>
+                    <input
+                        id="pokemonSearchInput"
+                        type="text"
+                        name="searchTerm"
+                        value={searchTerm.toLowerCase()}
+                        onChange={handleInputChange}
+                        placeholder="Search Pokémon"
+                    />
+                    <button id="submitBtn" onClick={handleSubmitForm}>Submit</button>
+                    <button id="clearBtn" onClick={clearScreen}>Clear</button>
+                </div>
+                <div>
+                    <h2>Please search for something</h2>
+                </div>
+            </div>
+        )
+    }
 }
 
 export default Pokedex;
