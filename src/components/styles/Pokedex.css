@@ -1,9 +1,3 @@
-@font-face {
-    font-family: 'webfont15ze';
-    src: url('https://get.fontspace.co/webfont/15ze/N2RkMTc5ZWI4ZWM4NGM5YmFlZjJmMDkyMjVjZWJiZWMub3Rm/pocket-monk.woff') format('woff'),
-        url('https://get.fontspace.co/webfont/15ze/N2RkMTc5ZWI4ZWM4NGM5YmFlZjJmMDkyMjVjZWJiZWMub3Rm/pocket-monk.otf')  format('opentype');
-}
-
 .hide {
     display: none;
 }
@@ -12,7 +6,7 @@
 #pokemonName,
     input,
     button {
-    font-family: webfont15ze;
+    font-family: var(--font-main);
 }
 
 #background {
@@ -145,7 +139,7 @@ button {
 #pokeInfo ul li {
     list-style-type: none;
     color: white;
-    font-family: webfont15ze;
+    font-family: var(--font-main);
     font-size: 2rem;
 }
 /* Pokemon info end */
