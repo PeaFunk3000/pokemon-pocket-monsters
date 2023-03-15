@@ -4,8 +4,15 @@
   --third-color:  #ef98a7;
   --fourth-color: #807094;
   --fifth-color: #604f71;
+  --font-main: 'webfont15ze';
+  --font-secondary: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+@font-face {
+  font-family: 'webfont15ze';
+  src: url('https://get.fontspace.co/webfont/15ze/N2RkMTc5ZWI4ZWM4NGM5YmFlZjJmMDkyMjVjZWJiZWMub3Rm/pocket-monk.woff') format('woff'),
+      url('https://get.fontspace.co/webfont/15ze/N2RkMTc5ZWI4ZWM4NGM5YmFlZjJmMDkyMjVjZWJiZWMub3Rm/pocket-monk.otf')  format('opentype');
+}
 
 body {
   padding: 0;
@@ -13,5 +20,5 @@ body {
   }
 
 * {
-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+font-family: var(--font-secondary);
 }
