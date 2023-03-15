@@ -1,7 +1,10 @@
 import React from 'react'
+import ImageShuffle from './ImageShuffle'
 
 export default function Landing() {
   return (
-    <div>Landing</div>
+    <div>
+      <ImageShuffle/>
+    </div>
   )
 }
