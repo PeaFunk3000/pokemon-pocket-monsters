@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import tcgAPI from "../utils/tcgAPI";
 import TCGResults from "./TCG/TCGResults";
 import SearchBanner from "./SearchBanner";
+const pokemon_tcg_logo = `${process.env.PUBLIC_URL}/images/pokemon_tcg_logo.png`;
 
 
 export default function TCG() {
@@ -65,6 +66,7 @@ export default function TCG() {
                     handleSubmitForm={handleSubmitForm}
                     searchTerm={searchTerm}
                     clearScreen={clearScreen}
+                    logo={pokemon_tcg_logo}
                 />
                 {tcgResult.data.map(item => <TCGResults key={item.id} resultsObj = {item}/>)}
             </div>
@@ -77,6 +79,7 @@ export default function TCG() {
                     handleSubmitForm={handleSubmitForm}
                     searchTerm={searchTerm}
                     clearScreen={clearScreen}
+                    logo={pokemon_tcg_logo}
                 />
                 <div>
                     <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
@@ -91,6 +94,7 @@ export default function TCG() {
                     handleSubmitForm={handleSubmitForm}
                     searchTerm={searchTerm}
                     clearScreen={clearScreen}
+                    logo={pokemon_tcg_logo}
                 />
                 <div>
                     <h2>{apiError.errorMsg}</h2>
@@ -105,6 +109,7 @@ export default function TCG() {
                     handleSubmitForm={handleSubmitForm}
                     searchTerm={searchTerm}
                     clearScreen={clearScreen}
+                    logo={pokemon_tcg_logo}
                 />
                 <div>
                     <h2>Please search for something</h2>
