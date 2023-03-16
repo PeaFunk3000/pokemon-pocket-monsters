@@ -1,5 +1,5 @@
 import React from 'react'
-import ImageShuffle from './ImageShuffle'
+import ImageShuffle from '../components/ImageShuffle'
 
 export default function Landing() {
   return (
