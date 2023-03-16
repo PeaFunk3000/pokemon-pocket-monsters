@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import tcgAPI from "../utils/tcgAPI";
-import TCGResults from "./TCG/TCGResults";
-import SearchBanner from "./SearchBanner";
-const pokemon_tcg_logo = `${process.env.PUBLIC_URL}/images/pokemon_tcg_logo.png`;
+import React, { useState } from "react";
+import pokeAPI from "../utils/pokeAPI";
+import "../styles/Pokedex.css";
+import PokedexSearch from "../components/PokedexSearch";
+import SearchBanner from "../components/SearchBanner";
+const pokemon_logo = `${process.env.PUBLIC_URL}/images/pokemon.png`;
 
-
-export default function TCG() {
-    const [tcgResult, setTcgResults] = useState();
+function Pokedex() {
+    const [pokeResult, setPokeResult] = useState();
     const [searchTerm, setSearchTerm] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [apiError, setApiError] = useState({
@@ -14,19 +14,21 @@ export default function TCG() {
         errorMsg: ""
     });
 
+   
+
     const handleInputChange = event => {
         setSearchTerm(event.target.value);
     };
 
     const clearScreen = () => {
-        resetTcgResult();
+        resetPokeResult();
         setIsLoading(false);
         setApiError({error: false, errorMsg: ""});
     };
 
-    const resetTcgResult = () => {
-        setTcgResults();
-    }
+    const resetPokeResult = () => {
+        setPokeResult();
+    };
 
     const handleSubmitForm = e => {
         e.preventDefault();
@@ -36,17 +38,32 @@ export default function TCG() {
 
         setApiError({error: false, errorMsg: ""});
         setIsLoading(true);
-        resetTcgResult();
-
-        tcgAPI.search(searchTerm)
+        resetPokeResult();
+    
+        pokeAPI.search(searchTerm)
         .then(res => {
             if (res.data.length === 0) {
-                throw new Error("No results found.");
+            throw new Error("No results found.");
             }
             if (res.data.status === "error") {
-                throw new Error(res.data.message);
+            throw new Error(res.data.message);
             }
-            setTcgResults(res);
+            setPokeResult({
+                name: res.data.name,
+                image: res.data.sprites.other["official-artwork"].front_default,
+                base_experience: res.data.base_experience,
+                id: res.data.id,
+                height: (res.data.height / 10),
+                weight: (res.data.weight / 10),
+                type: res.data.types[0].type.name,
+                hp: res.data.stats[0].base_stat,
+                attack: res.data.stats[1].base_stat,
+                defense: res.data.stats[2].base_stat,
+                special_attack: res.data.stats[3].base_stat,
+                special_defense: res.data.stats[4].base_stat,
+                speed: res.data.stats[5].base_stat,
+                abilities: res.data.abilities
+            });
             setIsLoading(false);
         })
         .catch(err => {
@@ -64,42 +81,44 @@ export default function TCG() {
             handleSubmitForm={handleSubmitForm}
             searchTerm={searchTerm}
             clearScreen={clearScreen}
-            logo={pokemon_tcg_logo}
+            logo={pokemon_logo}
         />;
 
-    if (tcgResult !== undefined) {
+    if (pokeResult !== undefined) {
         return (
             <div className="App">
                 {searchBannerVar}
-                {tcgResult.data.map(item => <TCGResults key={item.id} resultsObj = {item}/>)}
+                <PokedexSearch resultsObj = {pokeResult} />
             </div>
-        )
+        );
     } else if (isLoading === true) {
         return (
             <div className="App">
                 {searchBannerVar}
-                <div>
+                <div id="loadingPokeball">
                     <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
                 </div>
             </div>
         )
     } else if (apiError.error) {
-        return (
-            <div className="App">
-                {searchBannerVar}
-                <div>
-                    <h2>{apiError.errorMsg}</h2>
+            return (
+                <div className="App">
+                    {searchBannerVar}
+                    <div>
+                        <h2>{apiError.errorMsg}</h2>
+                    </div>
                 </div>
-            </div>
-        )
+            )
     } else {
         return (
             <div className="App">
                 {searchBannerVar}
-                <div>
+                <div id="helpMessage">
                     <h2>Please search for something</h2>
                 </div>
             </div>
         )
     }
 }
+
+export default Pokedex;

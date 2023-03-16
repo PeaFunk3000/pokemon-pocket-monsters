@@ -1,8 +1,8 @@
 import './App.css';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './components/Landing';
-import Pokedex from './components/Pokedex';
-import TCG from './components/TCG';
+import Home from './pages/Landing';
+import Pokedex from './pages/Pokedex';
+import TCG from './pages/TCG';
 import Nav from './components/Nav';
 import ImageShuffle from './components/ImageShuffle';
 
