@@ -1,7 +1,6 @@
 import React from "react";
 
 function SearchBanner(props) {
-    console.log(props.logo);
     return (
         <div id="banner" >
             <img id="pokemon" src={props.logo} alt="pokemon"></img>
