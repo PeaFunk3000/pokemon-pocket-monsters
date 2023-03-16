@@ -1,0 +1,16 @@
+{
+    "name":"tailwindcss-crash",
+    "version": "1.0.0",
+    "description":"",
+    "main": "Tailwind.js",
+    "scripts": {
+      "build:css": "tailwind build src/Tailwind.css -o dist/output.css"
+    },
+  "keywords": [],
+  "author":"",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  
+}
+  }
