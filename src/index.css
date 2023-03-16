@@ -27,5 +27,12 @@ font-family: var(--font-secondary);
   position: fixed;
   top: 0;
   z-index: -10;
-  object-fit: contain;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+#bgHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

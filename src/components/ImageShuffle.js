@@ -6,8 +6,8 @@ const imgs = [
 
 export default function ImageShuffle() {
   return (
-    <div>
-          <img class="backgroundImg" src={imgs[Math.floor(Math.random() * imgs.length)]}/>
+    <div id="bgHolder">
+          <img className="backgroundImg" src={imgs[Math.floor(Math.random() * imgs.length)]}/>
     </div>
   )
 }
