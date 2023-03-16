@@ -58,29 +58,26 @@ export default function TCG() {
         setSearchTerm("");
     };
 
+    const searchBannerVar = 
+        <SearchBanner
+            handleInputChange={handleInputChange}
+            handleSubmitForm={handleSubmitForm}
+            searchTerm={searchTerm}
+            clearScreen={clearScreen}
+            logo={pokemon_tcg_logo}
+        />;
+
     if (tcgResult !== undefined) {
         return (
             <div className="App">
-                <SearchBanner
-                    handleInputChange={handleInputChange}
-                    handleSubmitForm={handleSubmitForm}
-                    searchTerm={searchTerm}
-                    clearScreen={clearScreen}
-                    logo={pokemon_tcg_logo}
-                />
+                {searchBannerVar}
                 {tcgResult.data.map(item => <TCGResults key={item.id} resultsObj = {item}/>)}
             </div>
         )
     } else if (isLoading === true) {
         return (
             <div className="App">
-                <SearchBanner
-                    handleInputChange={handleInputChange}
-                    handleSubmitForm={handleSubmitForm}
-                    searchTerm={searchTerm}
-                    clearScreen={clearScreen}
-                    logo={pokemon_tcg_logo}
-                />
+                {searchBannerVar}
                 <div>
                     <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
                 </div>
@@ -89,13 +86,7 @@ export default function TCG() {
     } else if (apiError.error) {
         return (
             <div className="App">
-                <SearchBanner
-                    handleInputChange={handleInputChange}
-                    handleSubmitForm={handleSubmitForm}
-                    searchTerm={searchTerm}
-                    clearScreen={clearScreen}
-                    logo={pokemon_tcg_logo}
-                />
+                {searchBannerVar}
                 <div>
                     <h2>{apiError.errorMsg}</h2>
                 </div>
@@ -104,13 +95,7 @@ export default function TCG() {
     } else {
         return (
             <div className="App">
-                <SearchBanner
-                    handleInputChange={handleInputChange}
-                    handleSubmitForm={handleSubmitForm}
-                    searchTerm={searchTerm}
-                    clearScreen={clearScreen}
-                    logo={pokemon_tcg_logo}
-                />
+                {searchBannerVar}
                 <div>
                     <h2>Please search for something</h2>
                 </div>

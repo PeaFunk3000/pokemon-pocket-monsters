@@ -14,6 +14,8 @@ function Pokedex() {
         errorMsg: ""
     });
 
+   
+
     const handleInputChange = event => {
         setSearchTerm(event.target.value);
     };
@@ -73,29 +75,26 @@ function Pokedex() {
         setSearchTerm("");
     };
 
+    const searchBannerVar = 
+        <SearchBanner
+            handleInputChange={handleInputChange}
+            handleSubmitForm={handleSubmitForm}
+            searchTerm={searchTerm}
+            clearScreen={clearScreen}
+            logo={pokemon_logo}
+        />;
+
     if (pokeResult !== undefined) {
         return (
             <div className="App">
-                <SearchBanner
-                    handleInputChange={handleInputChange}
-                    handleSubmitForm={handleSubmitForm}
-                    searchTerm={searchTerm}
-                    clearScreen={clearScreen}
-                    logo={pokemon_logo}
-                />
+                {searchBannerVar}
                 <PokedexSearch resultsObj = {pokeResult} />
             </div>
         );
     } else if (isLoading === true) {
         return (
             <div className="App">
-                <SearchBanner
-                    handleInputChange={handleInputChange}
-                    handleSubmitForm={handleSubmitForm}
-                    searchTerm={searchTerm}
-                    clearScreen={clearScreen}
-                    logo={pokemon_logo}
-                />
+                {searchBannerVar}
                 <div id="loadingPokeball">
                     <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
                 </div>
@@ -104,13 +103,7 @@ function Pokedex() {
     } else if (apiError.error) {
             return (
                 <div className="App">
-                    <SearchBanner
-                        handleInputChange={handleInputChange}
-                        handleSubmitForm={handleSubmitForm}
-                        searchTerm={searchTerm}
-                        clearScreen={clearScreen}
-                        logo={pokemon_logo}
-                    />
+                    {searchBannerVar}
                     <div>
                         <h2>{apiError.errorMsg}</h2>
                     </div>
@@ -119,13 +112,7 @@ function Pokedex() {
     } else {
         return (
             <div className="App">
-                <SearchBanner
-                    handleInputChange={handleInputChange}
-                    handleSubmitForm={handleSubmitForm}
-                    searchTerm={searchTerm}
-                    clearScreen={clearScreen}
-                    logo={pokemon_logo}
-                />
+                {searchBannerVar}
                 <div id="helpMessage">
                     <h2>Please search for something</h2>
                 </div>
