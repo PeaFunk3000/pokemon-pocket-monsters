@@ -3,6 +3,7 @@ import pokeAPI from "../utils/pokeAPI";
 import "./styles/Pokedex.css";
 import PokedexSearch from "./PokedexSearch";
 import SearchBanner from "./SearchBanner";
+const pokemon_logo = `${process.env.PUBLIC_URL}/images/pokemon.png`;
 
 function Pokedex() {
     const [pokeResult, setPokeResult] = useState();
@@ -80,6 +81,7 @@ function Pokedex() {
                     handleSubmitForm={handleSubmitForm}
                     searchTerm={searchTerm}
                     clearScreen={clearScreen}
+                    logo={pokemon_logo}
                 />
                 <PokedexSearch resultsObj = {pokeResult} />
             </div>
@@ -92,6 +94,7 @@ function Pokedex() {
                     handleSubmitForm={handleSubmitForm}
                     searchTerm={searchTerm}
                     clearScreen={clearScreen}
+                    logo={pokemon_logo}
                 />
                 <div id="loadingPokeball">
                     <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
@@ -106,6 +109,7 @@ function Pokedex() {
                         handleSubmitForm={handleSubmitForm}
                         searchTerm={searchTerm}
                         clearScreen={clearScreen}
+                        logo={pokemon_logo}
                     />
                     <div>
                         <h2>{apiError.errorMsg}</h2>
@@ -120,6 +124,7 @@ function Pokedex() {
                     handleSubmitForm={handleSubmitForm}
                     searchTerm={searchTerm}
                     clearScreen={clearScreen}
+                    logo={pokemon_logo}
                 />
                 <div id="helpMessage">
                     <h2>Please search for something</h2>

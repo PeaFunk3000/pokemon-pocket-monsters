@@ -1,10 +1,10 @@
 import React from "react";
 
 function SearchBanner(props) {
+    console.log(props.logo);
     return (
         <div id="banner" >
-            <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
-            <img id="pokemon" src={process.env.PUBLIC_URL + "/images/pokemon.png"} alt="pokemon"></img>
+            <img id="pokemon" src={props.logo} alt="pokemon"></img>
             <h1 id="searchLabel" className="text-center">Search</h1>
             <input
                 id="pokemonSearchInput"
