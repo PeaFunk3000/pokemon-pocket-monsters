@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
 import tcgAPI from "../utils/tcgAPI";
-import ImageShuffle from './ImageShuffle';
 import TCGResults from "./TCG/TCGResults";
-// import Loading from "./Loading";
+import SearchBanner from "./SearchBanner";
 
 
 export default function TCG() {
     const [tcgResult, setTcgResults] = useState();
     const [searchTerm, setSearchTerm] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [apiError, setApiError] = useState({
+        error: false,
+        errorMsg: ""
+    });
 
     const handleInputChange = event => {
         setSearchTerm(event.target.value);
     };
 
-    const clearScreen = event => {
+    const clearScreen = () => {
         resetTcgResult();
         setIsLoading(false);
+        setApiError({error: false, errorMsg: ""});
     };
 
     const resetTcgResult = () => {
@@ -29,6 +33,7 @@ export default function TCG() {
             return;
         };
 
+        setApiError({error: false, errorMsg: ""});
         setIsLoading(true);
         resetTcgResult();
 
@@ -46,6 +51,7 @@ export default function TCG() {
         .catch(err => {
             console.log(err);
             setIsLoading(false);
+            setApiError({error: true, errorMsg: `This Pokémon "${searchTerm}" does not exist`});
         });
 
         setSearchTerm("");
@@ -54,68 +60,52 @@ export default function TCG() {
     if (tcgResult !== undefined) {
         return (
             <div className="App">
-                <ImageShuffle/>
-                <div id="banner" >
-                    <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
-                    <img id="pokemon" src={process.env.PUBLIC_URL + "/images/pokemon.png"} alt="pokemon"></img>
-                    <h1 id="searchLabel" className="text-center">Search</h1>
-                    <input
-                        id="pokemonSearchInput"
-                        type="text"
-                        name="searchTerm"
-                        value={searchTerm.toLowerCase()}
-                        onChange={handleInputChange}
-                        placeholder="Search Pokémon"
-                    />
-                    <button id="submitBtn" onClick={handleSubmitForm}>Submit</button>
-                    <button id="clearBtn" onClick={clearScreen}>Clear</button>
-                </div>
+                <SearchBanner
+                    handleInputChange={handleInputChange}
+                    handleSubmitForm={handleSubmitForm}
+                    searchTerm={searchTerm}
+                    clearScreen={clearScreen}
+                />
                 {tcgResult.data.map(item => <TCGResults key={item.id} resultsObj = {item}/>)}
             </div>
         )
     } else if (isLoading === true) {
         return (
             <div className="App">
-                <ImageShuffle/>
-                <div id="banner" >
-                    <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
-                    <img id="pokemon" src={process.env.PUBLIC_URL + "/images/pokemon.png"} alt="pokemon"></img>
-                    <h1 id="searchLabel" className="text-center">Search</h1>
-                    <input
-                        id="pokemonSearchInput"
-                        type="text"
-                        name="searchTerm"
-                        value={searchTerm.toLowerCase()}
-                        onChange={handleInputChange}
-                        placeholder="Search Pokémon"
-                    />
-                    <button id="submitBtn" onClick={handleSubmitForm}>Submit</button>
-                    <button id="clearBtn" onClick={clearScreen}>Clear</button>
-                </div>
+                <SearchBanner
+                    handleInputChange={handleInputChange}
+                    handleSubmitForm={handleSubmitForm}
+                    searchTerm={searchTerm}
+                    clearScreen={clearScreen}
+                />
                 <div>
                     <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
+                </div>
+            </div>
+        )
+    } else if (apiError.error) {
+        return (
+            <div className="App">
+                <SearchBanner
+                    handleInputChange={handleInputChange}
+                    handleSubmitForm={handleSubmitForm}
+                    searchTerm={searchTerm}
+                    clearScreen={clearScreen}
+                />
+                <div>
+                    <h2>{apiError.errorMsg}</h2>
                 </div>
             </div>
         )
     } else {
         return (
             <div className="App">
-                <ImageShuffle/>
-                <div id="banner" >
-                    <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
-                    <img id="pokemon" src={process.env.PUBLIC_URL + "/images/pokemon.png"} alt="pokemon"></img>
-                    <h1 id="searchLabel" className="text-center">Search</h1>
-                    <input
-                        id="pokemonSearchInput"
-                        type="text"
-                        name="searchTerm"
-                        value={searchTerm.toLowerCase()}
-                        onChange={handleInputChange}
-                        placeholder="Search Pokémon"
-                    />
-                    <button id="submitBtn" onClick={handleSubmitForm}>Submit</button>
-                    <button id="clearBtn" onClick={clearScreen}>Clear</button>
-                </div>
+                <SearchBanner
+                    handleInputChange={handleInputChange}
+                    handleSubmitForm={handleSubmitForm}
+                    searchTerm={searchTerm}
+                    clearScreen={clearScreen}
+                />
                 <div>
                     <h2>Please search for something</h2>
                 </div>
