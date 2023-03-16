@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import pokeAPI from "../utils/pokeAPI";
 import "./styles/Pokedex.css";
 import PokedexSearch from "./PokedexSearch";
-import ImageShuffle from './ImageShuffle';
 import SearchBanner from "./SearchBanner";
 
 function Pokedex() {
     const [pokeResult, setPokeResult] = useState();
     const [searchTerm, setSearchTerm] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [apiError, setApiError] = useState({
+        error: false,
+        errorMsg: ""
+    });
 
     const handleInputChange = event => {
         setSearchTerm(event.target.value);
@@ -17,6 +20,7 @@ function Pokedex() {
     const clearScreen = () => {
         resetPokeResult();
         setIsLoading(false);
+        setApiError({error: false, errorMsg: ""});
     };
 
     const resetPokeResult = () => {
@@ -29,6 +33,7 @@ function Pokedex() {
             return;
         };
 
+        setApiError({error: false, errorMsg: ""});
         setIsLoading(true);
         resetPokeResult();
     
@@ -61,6 +66,7 @@ function Pokedex() {
         .catch(err => {
             console.log(err);
             setIsLoading(false);
+            setApiError({error: true, errorMsg: `This Pokémon "${searchTerm}" does not exist`});
         });
 
         setSearchTerm("");
@@ -69,7 +75,6 @@ function Pokedex() {
     if (pokeResult !== undefined) {
         return (
             <div className="App">
-                <ImageShuffle/>
                 <SearchBanner
                     handleInputChange={handleInputChange}
                     handleSubmitForm={handleSubmitForm}
@@ -82,7 +87,6 @@ function Pokedex() {
     } else if (isLoading === true) {
         return (
             <div className="App">
-                <ImageShuffle/>
                 <SearchBanner
                     handleInputChange={handleInputChange}
                     handleSubmitForm={handleSubmitForm}
@@ -94,10 +98,23 @@ function Pokedex() {
                 </div>
             </div>
         )
+    } else if (apiError.error) {
+            return (
+                <div className="App">
+                    <SearchBanner
+                        handleInputChange={handleInputChange}
+                        handleSubmitForm={handleSubmitForm}
+                        searchTerm={searchTerm}
+                        clearScreen={clearScreen}
+                    />
+                    <div>
+                        <h2>{apiError.errorMsg}</h2>
+                    </div>
+                </div>
+            )
     } else {
         return (
             <div className="App">
-                <ImageShuffle/>
                 <SearchBanner
                     handleInputChange={handleInputChange}
                     handleSubmitForm={handleSubmitForm}
