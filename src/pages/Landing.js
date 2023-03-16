@@ -7,12 +7,11 @@ export default function Landing() {
        <div className="content">
       <section class="rw-wrapper">
         <h2 class="rw-sentence">
-          <span>WELLCOME TO</span>
-          <span>Pokemon - Pokedex </span>
+          <span>POKEMON</span>
           <div class="rw-words">
-              <span>search for Pokemon</span>
-              <span>info about Trading Cards</span>
-              <span>Compare your Cards</span>
+              <span>Search for a Pokemon</span>
+              <span>Search for Trading Cards</span>
+             
 
           </div>
           <span>Gotta Catch 'Em All</span>
