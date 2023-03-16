@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import tcgAPI from "../utils/tcgAPI";
+import ImageShuffle from './ImageShuffle';
 import TCGResults from "./TCG/TCGResults";
 // import Loading from "./Loading";
 
@@ -53,7 +54,7 @@ export default function TCG() {
     if (tcgResult !== undefined) {
         return (
             <div className="App">
-                <img id="background" src={process.env.PUBLIC_URL + `/images/background.png`} alt="background"></img>
+                <ImageShuffle/>
                 <div id="banner" >
                     <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
                     <img id="pokemon" src={process.env.PUBLIC_URL + "/images/pokemon.png"} alt="pokemon"></img>
@@ -75,7 +76,7 @@ export default function TCG() {
     } else if (isLoading === true) {
         return (
             <div className="App">
-                <img id="background" src={process.env.PUBLIC_URL + `/images/background.png`} alt="background"></img>
+                <ImageShuffle/>
                 <div id="banner" >
                     <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
                     <img id="pokemon" src={process.env.PUBLIC_URL + "/images/pokemon.png"} alt="pokemon"></img>
@@ -99,7 +100,7 @@ export default function TCG() {
     } else {
         return (
             <div className="App">
-                <img id="background" src={process.env.PUBLIC_URL + `/images/background.png`} alt="background"></img>
+                <ImageShuffle/>
                 <div id="banner" >
                     <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
                     <img id="pokemon" src={process.env.PUBLIC_URL + "/images/pokemon.png"} alt="pokemon"></img>
