@@ -3,6 +3,7 @@ import pokeAPI from "../utils/pokeAPI";
 import "./styles/Pokedex.css";
 import PokedexSearch from "./PokedexSearch";
 import ImageShuffle from './ImageShuffle';
+import SearchBanner from "./SearchBanner";
 
 function Pokedex() {
     const [pokeResult, setPokeResult] = useState();
@@ -13,7 +14,7 @@ function Pokedex() {
         setSearchTerm(event.target.value);
     };
 
-    const clearScreen = event => {
+    const clearScreen = () => {
         resetPokeResult();
         setIsLoading(false);
     };
@@ -69,21 +70,12 @@ function Pokedex() {
         return (
             <div className="App">
                 <ImageShuffle/>
-                <div id="banner" >
-                    <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
-                    <img id="pokemon" src={process.env.PUBLIC_URL + "/images/pokemon.png"} alt="pokemon"></img>
-                    <h1 id="searchLabel" className="text-center">Search</h1>
-                    <input
-                        id="pokemonSearchInput"
-                        type="text"
-                        name="searchTerm"
-                        value={searchTerm.toLowerCase()}
-                        onChange={handleInputChange}
-                        placeholder="Search Pokémon"
-                    />
-                    <button id="submitBtn" onClick={handleSubmitForm}>Submit</button>
-                    <button id="clearBtn" onClick={clearScreen}>Clear</button>
-                </div>
+                <SearchBanner
+                    handleInputChange={handleInputChange}
+                    handleSubmitForm={handleSubmitForm}
+                    searchTerm={searchTerm}
+                    clearScreen={clearScreen}
+                />
                 <PokedexSearch resultsObj = {pokeResult} />
             </div>
         );
@@ -91,22 +83,13 @@ function Pokedex() {
         return (
             <div className="App">
                 <ImageShuffle/>
-                <div id="banner" >
-                    <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
-                    <img id="pokemon" src={process.env.PUBLIC_URL + "/images/pokemon.png"} alt="pokemon"></img>
-                    <h1 id="searchLabel" className="text-center">Search</h1>
-                    <input
-                        id="pokemonSearchInput"
-                        type="text"
-                        name="searchTerm"
-                        value={searchTerm.toLowerCase()}
-                        onChange={handleInputChange}
-                        placeholder="Search Pokémon"
-                    />
-                    <button id="submitBtn" onClick={handleSubmitForm}>Submit</button>
-                    <button id="clearBtn" onClick={clearScreen}>Clear</button>
-                </div>
-                <div>
+                <SearchBanner
+                    handleInputChange={handleInputChange}
+                    handleSubmitForm={handleSubmitForm}
+                    searchTerm={searchTerm}
+                    clearScreen={clearScreen}
+                />
+                <div id="loadingPokeball">
                     <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
                 </div>
             </div>
@@ -115,22 +98,13 @@ function Pokedex() {
         return (
             <div className="App">
                 <ImageShuffle/>
-                <div id="banner" >
-                    <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
-                    <img id="pokemon" src={process.env.PUBLIC_URL + "/images/pokemon.png"} alt="pokemon"></img>
-                    <h1 id="searchLabel" className="text-center">Search</h1>
-                    <input
-                        id="pokemonSearchInput"
-                        type="text"
-                        name="searchTerm"
-                        value={searchTerm.toLowerCase()}
-                        onChange={handleInputChange}
-                        placeholder="Search Pokémon"
-                    />
-                    <button id="submitBtn" onClick={handleSubmitForm}>Submit</button>
-                    <button id="clearBtn" onClick={clearScreen}>Clear</button>
-                </div>
-                <div>
+                <SearchBanner
+                    handleInputChange={handleInputChange}
+                    handleSubmitForm={handleSubmitForm}
+                    searchTerm={searchTerm}
+                    clearScreen={clearScreen}
+                />
+                <div id="helpMessage">
                     <h2>Please search for something</h2>
                 </div>
             </div>
