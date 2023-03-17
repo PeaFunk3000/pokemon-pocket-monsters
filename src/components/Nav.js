@@ -5,6 +5,8 @@ import { faBars } from "@fortawesome/free-solid-svg-icons"
 import Player from "../components/Player";
 import "../styles/Nav.css"
 
+const pokemon_logo = `${process.env.PUBLIC_URL}/images/pokemon.png`
+
 export default function Navbar() {
     // create state to determine if navbar expanded or not via boolean
     const [expandNavbar, setExpandNavbar] = useState(false);
@@ -28,12 +30,13 @@ export default function Navbar() {
             <FontAwesomeIcon icon={faBars}/>
         </button>
     </div>
+    <div class="logo"><img id="pokemon" src={pokemon_logo} alt="pokemon"></img></div>
     <div className="links">
         <Link to="/">Home</Link>
         <Link to="/pokedex">Pokedex</Link>
         <Link to="/trading-card-game">TCG</Link>
-        <Player/>
     </div>
+    <Player/>
     </div>    
   )
 };
