@@ -79,18 +79,19 @@ button {
 }
 
 #pokemonImg {
-  position: absolute;
-  top: 25%;
-  left: 3%;
-  width: 43%;
+    position: absolute;
+    top: 23%;
+    left: 4.5%;
+    width: 43%;
+    filter: drop-shadow(0.40em 0.40em 0.3em grey);
 }
 
 #statsChart {
-  position: absolute;
-  top: 27%;
-  left: 59%;
-  width: 35%;
-  height: 55%;
+    position: absolute;
+    top: 26.7%;
+    left: 59.7%;
+    width: 35%;
+    height: 54.8%;
 }
 
 #statsChart canvas {
