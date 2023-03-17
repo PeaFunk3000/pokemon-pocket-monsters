@@ -1,5 +1,7 @@
 import React from 'react'
 import "../styles/Landing.css";
+import Audio from "../components/Player";
+import Player from '../components/Player';
 
 export default function Landing() {
   return (

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
+import Player from "../components/Player";
 import "../styles/Nav.css"
 
 export default function Navbar() {
@@ -31,6 +32,7 @@ export default function Navbar() {
         <Link to="/">Home</Link>
         <Link to="/pokedex">Pokedex</Link>
         <Link to="/trading-card-game">TCG</Link>
+        <Player/>
     </div>
     </div>    
   )
