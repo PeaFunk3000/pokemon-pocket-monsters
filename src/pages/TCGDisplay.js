@@ -12,9 +12,11 @@ const TCGDisplay = ({route,navigate}) => {
 
   return (
     <div>
-      <h1>SINGLE CARD DISPLAY</h1>
+      <h1>SINGLE CARD INFO</h1>
       <h1>{card.result.name}</h1>
       <img id="tcgImage" src={typeof(card.result.images.small) === 'undefined' ? '' : card.result.images.small} alt="tcg card"></img>
+    <h2>Set</h2>
+    <p>{card.result.set.name}</p>
     </div>
   );
 }
