@@ -1,10 +1,22 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-export default function TCGDisplay() {
+const TCGDisplay = ({route,navigate}) => {
+  const location = useLocation();
   const { id } = useParams();
-  return <div>
-    <h1>SINGLE CARD DISPLAY</h1>
-    <h1></h1>
-  </div>;
+
+  const card = location.state;
+
+  console.log(card);
+
+  return (
+    <div>
+      <h1>SINGLE CARD DISPLAY</h1>
+      <h1>{card.result.name}</h1>
+      <img id="tcgImage" src={typeof(card.result.images.small) === 'undefined' ? '' : card.result.images.small} alt="tcg card"></img>
+    </div>
+  );
 }
+
+export default TCGDisplay;
