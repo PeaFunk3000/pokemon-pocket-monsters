@@ -3,7 +3,6 @@ import React from "react";
 function SearchBanner(props) {
     return (
         <div id="banner" >
-            <img id="pokemon" src={props.logo} alt="pokemon"></img>
             <h1 id="searchLabel" className="text-center">Search</h1>
             <input
                 id="pokemonSearchInput"
