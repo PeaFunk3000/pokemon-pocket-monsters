@@ -4,6 +4,7 @@ import Home from './pages/Landing';
 import Pokedex from './pages/Pokedex';
 import TCG from './pages/TCG';
 import Nav from './components/Nav';
+import TCGDisplay from './pages/TCGDisplay';
 import ImageShuffle from './components/ImageShuffle';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />}/>
           <Route path="pokedex" element={<Pokedex />}/>
           <Route path="trading-card-game" element={<TCG />}/>
+          <Route path="trading-card-game/:id" element={<TCGDisplay />} />
         </Routes>
       </Router>
     </div>
