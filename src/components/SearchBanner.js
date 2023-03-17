@@ -9,7 +9,7 @@ function SearchBanner(props) {
                 id="pokemonSearchInput"
                 type="text"
                 name="searchTerm"
-                value={props.searchTerm.toLowerCase()}
+                value={props.searchTerm}
                 onChange={props.handleInputChange}
                 placeholder="Search Pokémon"
             />
