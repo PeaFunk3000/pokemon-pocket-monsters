@@ -32,9 +32,9 @@ export default function Navbar() {
     </div>
     <div class="logo"><img id="pokemon" src={pokemon_logo} alt="pokemon"></img></div>
     <div className="links">
-        <Link to="/">Home</Link>
-        <Link to="/pokedex">Pokedex</Link>
-        <Link to="/trading-card-game">TCG</Link>
+        <Link to="/" className= "bg-blue-900 hover:bg-blue-400 font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" >Home </Link>
+        <Link to="/pokedex" className= "bg-blue-900 hover:bg-blue-400 font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Pokedex</Link>
+        <Link to="/trading-card-game" className= "bg-blue-900 hover:bg-blue-400  font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">TCG</Link>
     </div>
     <Player/>
     </div>    
