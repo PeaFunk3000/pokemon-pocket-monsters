@@ -17,7 +17,7 @@ function Pokedex() {
    
 
     const handleInputChange = event => {
-        setSearchTerm(event.target.value);
+        setSearchTerm(event.target.value.toLowerCase());
     };
 
     const clearScreen = () => {
