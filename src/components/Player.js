@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 const pokemusic = [
   `${process.env.PUBLIC_URL}/PokemonCenter.mp3`,
+  `${process.env.PUBLIC_URL}/PokemonIntro.mp3`,
+  `${process.env.PUBLIC_URL}/Jigglypuff.mp3`
 ]
 
 const useAudio = url => {
