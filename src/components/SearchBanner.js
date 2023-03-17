@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/SearchBanner.css"
 
 function SearchBanner(props) {
     return (
