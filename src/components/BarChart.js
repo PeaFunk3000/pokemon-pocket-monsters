@@ -30,6 +30,13 @@ const BarChart = (props) => {
             },
             title: {
                 display: false
+            },
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        return context.parsed.y;
+                    }
+                }
             }
         },
         scales: {
