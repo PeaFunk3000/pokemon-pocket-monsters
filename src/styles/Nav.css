@@ -1,90 +1,140 @@
 .navbar {
-    width: 100%;
-    height: 100px;
-    background: var(--first-color);
+  width: 100%;
+  height: 120px;
+  background: var(--first-color);
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+      "pokemon links player";
+
+}
+
+.logo {
+  grid-area: pokemon;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player {
+  grid-area: player;
+  display: flex;
+  align-items: center;
+}
+
+.player button {
+  background-color: var(--second-color);
+  color: var(--first-color);
+}
+.links {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--second-color);
+  grid-area: links;
+}
+
+.navbar a {
+  color: var(--second-color);
+  text-decoration: none;
+  margin: 20px;
+  font-size: 25px;
+  font-family: var(--font-main);
+}
+
+.toggleButton {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.toggleButton svg {
+  font-size: 50px;
+}
+
+.toggleButton button {
+  margin-right: 20px;
+  background-color: transparent;
+  border: none;
+  color: var(--second-color);
+  cursor: pointer;
+}
+
+#open {
+  height: 100vh;
+}
+
+#open .links {
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 100px;
+}
+
+#open a {
+  width: 100%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .logo {
+    display: none;
   }
-  
-  .links {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--second-color);
+  .navbar {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "links player";
   }
   
   .navbar a {
-    color: var(--second-color);
-    text-decoration: none;
-    margin: 20px;
-    font-size: 25px;
-    font-family: var(--font-main);
+    width: 100px;
   }
   
-  .toggleButton {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  
-  .toggleButton svg {
-    font-size: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    display: block;
   }
 
-  .toggleButton button {
-    margin-right: 20px;
-    background-color: transparent;
-    border: none;
-    color: var(--second-color);
-    cursor: pointer;
+  .player {
+    display: none;
   }
-  
+
+  .logo {
+    display: none;
+  }
+
+  .toggleButton {
+    display: flex;
+  }
+
+  #close a {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+
+  .toggleButton {
+    display: none;
+  }
+
+  .hiddenLinks {
+    display: none;
+  }
+
   #open {
-    height: 100vh;
+    height: 100px;
   }
-  
+
   #open .links {
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 100px;
+    flex-direction: row;
   }
-  
-  #open a {
-    width: 100%;
-    text-align: center;
-  }
-  
-  @media only screen and (max-width: 900px) {
-    .navbar a {
-      width: 100px;
-    }
-  }
-  
-  @media only screen and (max-width: 600px) {
-    .toggleButton {
-      display: flex;
-    }
-    #close a {
-      display: none;
-    }
-  }
-  
-  @media only screen and (min-width: 600px) {
-    .toggleButton {
-      display: none;
-    }
-  
-    .hiddenLinks {
-      display: none;
-    }
-  
-    #open {
-      height: 100px;
-    }
-  
-    #open .links {
-      flex-direction: row;
-    }
 }
