@@ -17,7 +17,7 @@ function App() {
           <Route path="/" element={<Home />}/>
           <Route path="pokedex" element={<Pokedex />}/>
           <Route path="trading-card-game" element={<TCG />}/>
-          <Route path="project/:id" element={<TCGDisplay />} />
+          <Route path="trading-card-game/:id" element={<TCGDisplay />} />
         </Routes>
       </Router>
     </div>
