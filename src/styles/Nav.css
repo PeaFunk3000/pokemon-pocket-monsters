@@ -10,12 +10,12 @@
 
 }  */
 
-.logo {
+/* .logo {
   grid-area: pokemon;
   display: flex;
   justify-content: center;
   align-items: center;
-} 
+}  */
 
  .player {
   grid-area: player;
