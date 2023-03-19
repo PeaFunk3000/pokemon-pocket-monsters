@@ -4,7 +4,7 @@ import "../styles/SearchBanner.css"
 function SearchBanner(props) {
     return (
         <div className = "container flex  justify-center wrap w-screen min-h-fit">
-        <div id="banner" >
+        <div id="banner" ClassName ="mb-4">
             <h1 id="searchLabel" >Search</h1>
             <input
                 id="pokemonSearchInput"
@@ -13,11 +13,11 @@ function SearchBanner(props) {
                 value={props.searchTerm}
                 onChange={props.handleInputChange}
                 placeholder="Search Pokémon"
-                className="px-4"
+                className="px-4 rounded"
                 
             />
-            <button id="submitBtn" className="mx-4" onClick={props.handleSubmitForm}>Submit</button>
-            <button id="clearBtn" onClick={props.clearScreen}>Clear</button>
+            <button id="submitBtn" className="mx-4 mb-6 rounded px-1" onClick={props.handleSubmitForm}>Submit</button>
+            <button id="clearBtn" className="rounded px-1" onClick={props.clearScreen}>Clear</button>
         </div>
         </div>
     );
