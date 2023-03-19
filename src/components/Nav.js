@@ -21,7 +21,7 @@ export default function Navbar() {
  
   return (
     // navbar id to control open/close via CSS using   state hook
-    <div className = "container w-screen min-w-full  ">
+    <div className = "container w-screen min-w-full bg=blue-100 ">
     <div className="navbar object-center" id={expandNavbar ? "open" : "close"}>  
     <div className="toggleButton">
         {/* onclick for button to expand or collapse navbar */}
@@ -31,7 +31,7 @@ export default function Navbar() {
             <FontAwesomeIcon icon={faBars}/>
         </button>
     </div>
-    <div className="flex justify-center" ><img id="pokemon" src={pokemon_logo} alt="pokemon"></img></div>
+    <div className="flex justify-center pt-5" ><img id="pokemon" src={pokemon_logo} alt="pokemon"></img></div>
     <div className="links ">
         <Link to="/" className= "bg-blue-900 hover:bg-blue-400  font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" >Home </Link>
         <Link to="/pokedex" className= "bg-blue-900 hover:bg-blue-400 font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Pokedex</Link>
