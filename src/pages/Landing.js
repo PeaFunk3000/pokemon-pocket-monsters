@@ -21,5 +21,6 @@ export default function Landing() {
       </section>
     </div>
     </div>
+    
   )
 }
