@@ -1,41 +1,4 @@
- /* .navbar {
-  width: 100%;
-  height: 120px;
-  background: var(--first-color);
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas:
-      "pokemon links player";
-
-}  */
-
-/* .logo {
-  grid-area: pokemon;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}  */
-
- .player {
-  grid-area: player;
-  display: flex;
-  align-items: center;
-} 
-
- .player button {
-  background-color: var(--second-color);
-  color: var(--first-color);
-} 
- /* .links {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--second-color);
-  grid-area: links;
-}  */
+ 
 
  .navbar a {
   color: var(--second-color);

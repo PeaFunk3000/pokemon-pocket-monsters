@@ -32,7 +32,7 @@ export default function Navbar() {
         </button>
     </div>
     <div className="flex justify-center pt-5 content-center" ><img id="pokemon" src={pokemon_logo} alt="pokemon"></img></div>
-    <div className="links flex justify-center ">
+    <div className="links flex justify-center width-full height-full">
         <Link to="/" className= "bg-blue-900 hover:bg-blue-400  font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" >Home </Link>
         <Link to="/pokedex" className= "bg-blue-900 hover:bg-blue-400 font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Pokedex</Link>
         <Link to="/trading-card-game" className= "bg-blue-900 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">TCG</Link>
