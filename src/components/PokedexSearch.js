@@ -22,6 +22,7 @@ function PokedexSearch(props) {
                     max={160}
                     boolean={false}
                     color={"#30fb05"}
+                    name={"statsChart"}
                     labels={["HP", "Att", "Def", "Sp.Att", "Sp.Def", "Speed"]}
                 />
             </div>

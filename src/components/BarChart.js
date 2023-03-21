@@ -94,7 +94,7 @@ const BarChart = (props) => {
   };
 
   return (
-    <div id="statsChart" className={props.name}>
+    <div id={props.name}>
       <Bar data={data} options={options} />
     </div>
   );

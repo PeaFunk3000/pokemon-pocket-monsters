@@ -11,6 +11,8 @@ const TCGDisplay = ({ route, navigate }) => {
 
   const card = location.state;
 
+  console.log(card);
+
   return (
     <div className="singleCard">
       <div className="cardTitle">
@@ -37,12 +39,13 @@ const TCGDisplay = ({ route, navigate }) => {
                     title="Cardmarket Price Trend"
                     boolean={true}
                 />
+      <a href={card.result.cardmarket.url}>Buy on Cardmarket</a>
       </div>
       <div className="cardPrinting">
       <h1>Card Printing</h1>  
       <h2>Set</h2>
       <h3>{card.result.set.name}</h3>
-      <h2>Printed</h2>
+      <h2>No. Printed</h2>
       <h3>{card.result.set.total}</h3>
       <button className="back" onClick={() => {
         locate("../trading-card-game", {state:{tcgResult:card.history}})}}>Back to Cards</button>
