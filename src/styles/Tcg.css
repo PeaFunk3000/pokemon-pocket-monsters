@@ -1,0 +1,10 @@
+.tcgResults {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.tcgHolder {
+    width: 250px;
+    padding-bottom: 1rem;
+}
