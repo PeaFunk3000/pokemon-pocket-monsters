@@ -95,7 +95,7 @@ function Pokedex() {
         return (
             <div className="App">
                 {searchBannerVar}
-                <div id="loadingPokeball">
+                <div className="centreItems">
                     <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
                 </div>
             </div>
@@ -104,8 +104,8 @@ function Pokedex() {
             return (
                 <div className="App">
                     {searchBannerVar}
-                    <div>
-                        <h2>{apiError.errorMsg}</h2>
+                    <div className="centreItems">
+                        <h2 className="searchMsg">{apiError.errorMsg}</h2>
                     </div>
                 </div>
             )
@@ -113,8 +113,8 @@ function Pokedex() {
         return (
             <div className="App">
                 {searchBannerVar}
-                <div id="helpMessage">
-                    <h2>Please search for something</h2>
+                <div className="centreItems">
+                    <h2 className="searchMsg">Please search for something</h2>
                 </div>
             </div>
         )

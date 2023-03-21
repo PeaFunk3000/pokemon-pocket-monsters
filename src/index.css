@@ -41,3 +41,35 @@ font-family: var(--font-secondary);
   height: 100px;
   flex-grow: 0;
 }
+
+
+/*******POKEBALL*********/
+
+.centreItems {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#pokeball {
+  width: 10vw;
+  animation: rotation 4s infinite linear;
+  margin-top: 5vh;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/*******POKEMON ERROR*********/
+.searchMsg {
+  font-family: var(--font-main);
+  font-size: 5vw;
+  margin: 0;
+  text-shadow: -0.25vw 0 white, 0 0.25vw white, 0.25vw 0 white, 0 -0.25vw white;
+}
