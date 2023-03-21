@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import "../styles/Tcg.css";
 import tcgAPI from "../utils/tcgAPI";
 import TCGResults from "../components/TCGResults";
 import SearchBanner from "../components/SearchBanner";
 const pokemon_tcg_logo = `${process.env.PUBLIC_URL}/images/pokemon_tcg_logo.png`;
-
 
 export default function TCG() {
     const [tcgResult, setTcgResults] = useState();
@@ -71,7 +71,9 @@ export default function TCG() {
         return (
             <div className="App">
                 {searchBannerVar}
-                {tcgResult.data.map(item => <TCGResults key={item.id} resultsObj = {item}/>)}
+                <div class="tcgResults">
+                    {tcgResult.data.map(item => <TCGResults key={item.id} resultsObj = {item}/>)}
+                </div>
             </div>
         )
     } else if (isLoading === true) {
