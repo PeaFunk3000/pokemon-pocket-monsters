@@ -3,7 +3,7 @@ import "../styles/SearchBanner.css"
 
 function SearchBanner(props) {
     return (
-        <div className = "container flex  justify-center wrap w-screen min-h-fit">
+        <div className = "search__bar container flex  justify-center wrap w-screen min-h-fit">
         <div id="banner" className ="mb-4">
             <h1 id="searchLabel" >Search</h1>
             <input

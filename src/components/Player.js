@@ -32,7 +32,7 @@ const Player = ({ url }) => {
   const [playing, toggle] = useAudio(url);
 
   return (
-    <div lcass="player" className="flex flex-row-reverse justify-center mb-6   container w-screen  ">
+    <div lcass="player" className="player absolute top-5 left-3 ">
     <div className="player">
       <button onClick={toggle} className="rounded px-2" >{playing ? "Pause" : "Play" }</button>
     </div>
