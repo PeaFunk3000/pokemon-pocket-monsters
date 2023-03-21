@@ -25,7 +25,7 @@ button {
 }
 
 #typeImg {
-  width: 10%;
+  width: 16vw;
   padding-left: 5%;
 }
 /* Pokemon name heading Start */
@@ -52,7 +52,7 @@ button {
 
 #pokemonImg {
     position: absolute;
-    top: 23%;
+    top: 24%;
     left: 4.5%;
     width: 43%;
     filter: drop-shadow(0.40em 0.40em 0.3em grey);
@@ -60,10 +60,10 @@ button {
 
 #statsChart {
     position: absolute;
-    top: 26.7%;
+    top: 27%;
     left: 59.7%;
     width: 35%;
-    height: 54.8%;
+    height: 61%;
 }
 
 #statsChart canvas {
@@ -80,9 +80,11 @@ button {
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 1rem;
   border: 6px solid white;
   border-radius: 10px;
   background-color: red;
+  padding: 1rem;
 }
 
 #pokeInfo ul li {
