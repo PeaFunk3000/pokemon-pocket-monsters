@@ -32,11 +32,6 @@ button {
   }
 }
 
-#pokemon {
-  height: 100px;
-  flex-grow: 0;
-}
-
 /* Pokemon name heading Start */
 #headingPoke {
   display: flex;

@@ -27,10 +27,17 @@ font-family: var(--font-secondary);
   z-index: -10;
   min-width: 100vw;
   min-height: 100vh;
+  object-fit: cover;
 }
 
 #bgHolder {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* pokemon logo */
+#pokemon {
+  height: 100px;
+  flex-grow: 0;
 }
