@@ -16,9 +16,14 @@ function PokedexSearch(props) {
                 <img id="pokedexImg" src={process.env.PUBLIC_URL + "/images/pokedex.png"} alt="pokedex"></img>
                 <img id="pokemonImg" src={props.resultsObj.image} alt="pokemon inside pokedex"></img>
                 <BarChart
-                    chartData={props}
+                    chartData={[props.resultsObj.hp, props.resultsObj.attack, props.resultsObj.defense, props.resultsObj.special_attack, props.resultsObj.special_defense, props.resultsObj.speed]}
                     width={50}
                     height={50}
+                    max={160}
+                    boolean={false}
+                    color={"#30fb05"}
+                    name={"statsChart"}
+                    labels={["HP", "Att", "Def", "Sp.Att", "Sp.Def", "Speed"]}
                 />
             </div>
            
