@@ -50,10 +50,9 @@
   }
   .navbar {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    /* grid-template-columns: 4fr 1fr;
     grid-template-rows: 1fr;
-    grid-template-areas:
-        "links player";
+    grid-template-areas: "links player"; */
   }
   
   .navbar a {
@@ -67,9 +66,7 @@
     display: block;
   }
 
-  .player {
-    display: none;
-  }
+
 
   .logo {
     display: none;
