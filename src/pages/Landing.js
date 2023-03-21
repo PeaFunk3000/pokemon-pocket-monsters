@@ -7,10 +7,10 @@ export default function Landing() {
   return (
     <div>
        <div className="content">
-      <section class="rw-wrapper">
-        <h2 class="rw-sentence">
+      <section className="rw-wrapper">
+        <h2 className="rw-sentence">
           <span>POKEMON</span>
-          <div class="rw-words">
+          <div className="rw-words">
               <span>Search for a Pokemon</span>
               <span>Search for Trading Cards</span>
              
