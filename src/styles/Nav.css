@@ -47,14 +47,12 @@ padding-top: 3px;
 }
 
 @media only screen and (max-width: 900px) {
-  .logo {
+  .logo  {
     display: none;
   }
   .navbar {
     display: grid;
-    /* grid-template-columns: 4fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "links player"; */
+   
   }
   
   .navbar a {
@@ -110,4 +108,6 @@ padding-top: 3px;
   #open .links {
     flex-direction: row;
   }
+
+ 
 }
