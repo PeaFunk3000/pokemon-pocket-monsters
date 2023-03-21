@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, {useState, useEffect} from 'react';
+import {useLocation} from "react-router-dom";
 import "../styles/Tcg.css";
 import tcgAPI from "../utils/tcgAPI";
 import TCGResults from "../components/TCGResults";
 import SearchBanner from "../components/SearchBanner";
 const pokemon_tcg_logo = `${process.env.PUBLIC_URL}/images/pokemon_tcg_logo.png`;
 
-export default function TCG() {
+export default function TCG({ route, navigate }) {
+    const location = useLocation();
     const [tcgResult, setTcgResults] = useState();
     const [searchTerm, setSearchTerm] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -13,6 +15,16 @@ export default function TCG() {
         error: false,
         errorMsg: ""
     });
+
+    const history = location.state;
+    
+    useEffect(() => {
+        if (history) {
+            setTcgResults(history.tcgResult)
+        }
+    },
+    []
+  );
 
     const handleInputChange = event => {
         setSearchTerm(event.target.value.toLowerCase());
@@ -48,6 +60,8 @@ export default function TCG() {
             }
             setTcgResults(res);
             setIsLoading(false);
+
+
         })
         .catch(err => {
             console.log(err);
@@ -71,8 +85,8 @@ export default function TCG() {
         return (
             <div className="App">
                 {searchBannerVar}
-                <div class="tcgResults">
-                    {tcgResult.data.map(item => <TCGResults key={item.id} resultsObj = {item}/>)}
+                <div className="tcgResults">
+                    {tcgResult.data.map(item => <TCGResults key={item.id} resultsObj = {item} tcgResult = {tcgResult}/>)}
                 </div>
             </div>
         )

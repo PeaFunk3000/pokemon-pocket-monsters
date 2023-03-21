@@ -33,7 +33,7 @@ const Player = ({ url }) => {
 
   return (
     <div lcass="player" className="flex flex-row-reverse justify-center mb-6   container w-screen  ">
-    <div class="player">
+    <div className="player">
       <button onClick={toggle} className="rounded px-2" >{playing ? "Pause" : "Play" }</button>
     </div>
     </div>
