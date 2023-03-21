@@ -3,6 +3,7 @@ import Abilities from "./Abilities";
 import BarChart from "./BarChart";
 
 function PokedexSearch(props) {
+    console.log(props);
     return (
         <div className={props.display}>
             <div id="headingPoke">
@@ -16,9 +17,12 @@ function PokedexSearch(props) {
                 <img id="pokedexImg" src={process.env.PUBLIC_URL + "/images/pokedex.png"} alt="pokedex"></img>
                 <img id="pokemonImg" src={props.resultsObj.image} alt="pokemon inside pokedex"></img>
                 <BarChart
-                    chartData={props}
+                    chartData={[props.resultsObj.hp, props.resultsObj.attack, props.resultsObj.defense, props.resultsObj.special_attack, props.resultsObj.special_defense, props.resultsObj.speed]}
                     width={50}
                     height={50}
+                    min={0}
+                    max={160}
+                    labels={["HP", "Att", "Def", "Sp.Att", "Sp.Def", "Speed"]}
                 />
             </div>
            

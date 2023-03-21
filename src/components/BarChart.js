@@ -4,14 +4,14 @@ import { Bar } from "react-chartjs-2";
 
 
 const BarChart = (props) => {
-    const labels = ["HP", "Att", "Def", "Sp.Att", "Sp.Def", "Speed"];
+    console.log(props);
+    const labels = props.labels;
     const barColors = ["#2D00F7", "#6A00F4","#A100F2","#BC00DD","#DB00B6","#F20089"];
-    const data_values = [props.chartData.resultsObj.hp, props.chartData.resultsObj.attack, props.chartData.resultsObj.defense, props.chartData.resultsObj.special_attack, props.chartData.resultsObj.special_defense, props.chartData.resultsObj.speed];
+    const data_values = props.chartData;
 
     const data = {
         labels: labels,
         datasets: [{
-            label: props.chartData.resultsObj.name,
             backgroundColor: barColors, //"#0456f9",
             borderColor: "#0456f9",
             data: data_values,
@@ -41,8 +41,8 @@ const BarChart = (props) => {
         },
         scales: {
             y: {
-                min: 0,
-                max: 160,
+                min: props.min,
+                max: props.max,
                 ticks: {
                     // font :{
                     //     size: 20
@@ -80,7 +80,7 @@ const BarChart = (props) => {
     }
 
     return (
-        <div id="statsChart" className={props.display}>
+        <div id="statsChart" className={props.name}>
             <Bar data={data} options={options}/>
         </div>
     );

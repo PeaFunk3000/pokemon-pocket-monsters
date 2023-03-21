@@ -1,0 +1,19 @@
+* {
+    font-family: var(--font-main);
+}
+
+.singleCard h1 {
+    font-family: var(--font-main);
+    font-size: 5vw;
+    margin: 0;
+    text-shadow: -0.25vw 0 white, 0 0.25vw white, 0.25vw 0 white, 0 -0.25vw white;
+}
+
+.back {
+    border-radius: 5px;
+    font-size: 1.5rem;
+    background-color: var(--second-color);
+    color: var(--first-color);
+    cursor: pointer;
+  }
+  

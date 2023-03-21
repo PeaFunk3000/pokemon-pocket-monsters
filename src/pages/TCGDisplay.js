@@ -1,7 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router-dom";
-import TCGResults from "../components/TCGResults";
+import BarChart from "../components/BarChart";
+import "../styles/TCGDisplay.css";
 
 const TCGDisplay = ({ route, navigate }) => {
   const locate = useNavigate();
@@ -11,8 +12,8 @@ const TCGDisplay = ({ route, navigate }) => {
   const card = location.state;
 
   return (
-    <div>
-      <h1>SINGLE CARD INFO</h1>
+    <div className="singleCard">
+      <div>
       <h1>{card.result.name}</h1>
       <img
         id="tcgImage"
@@ -23,9 +24,19 @@ const TCGDisplay = ({ route, navigate }) => {
         }
         alt="tcg card"
       ></img>
-      <h2>Set</h2>
+      </div>
+      <div>
+      <h1>CardMarket Info</h1>
+      <BarChart
+                    chartData={[card.result.cardmarket.prices.avg1,card.result.cardmarket.prices.avg7,card.result.cardmarket.prices.avg30,card.result.cardmarket.prices.trendPrice]}
+                    width={50}
+                    height={50}
+                    labels={["1Day", "7Day", "30Day", "Trend"]}
+                    name={"priceChart"}
+                />
+      </div>
       <p>{card.result.set.name}</p>
-      <button onClick={() => {
+      <button className="back" onClick={() => {
         locate("../trading-card-game", {state:{tcgResult:card.history}})}}>Back to Cards</button>
     </div>
   );
