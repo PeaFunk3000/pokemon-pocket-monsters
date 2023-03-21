@@ -85,7 +85,7 @@ export default function TCG({ route, navigate }) {
         return (
             <div className="App">
                 {searchBannerVar}
-                <div className="tcgResults cursor-pointer img ">
+                <div className="tcgResults cursor-pointer  ">
                     {tcgResult.data.map(item => <TCGResults key={item.id} resultsObj = {item} tcgResult = {tcgResult}/>)}
                 </div>
             </div>
