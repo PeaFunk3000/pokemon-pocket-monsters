@@ -5,7 +5,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons"
 import Player from "../components/Player";
 import "../styles/Nav.css"
 
-const pokemon_logo = `${process.env.PUBLIC_URL}/images/pokemon.png`
+let pokemon_logo = `${process.env.PUBLIC_URL}/images/pokemon.png`
 
 export default function Navbar() {
     // create state to determine if navbar expanded or not via boolean
@@ -13,6 +13,14 @@ export default function Navbar() {
 
     // get information on current route, defining location variable set from useLocation hook
     const location = useLocation();
+
+    if (location.pathname === "/trading-card-game") {
+        pokemon_logo = `${process.env.PUBLIC_URL}/images/pokemon_tcg_logo.png`
+    } else if (location.pathname === "/pokedex") {
+        pokemon_logo = `${process.env.PUBLIC_URL}/images/pokedex_logo.png`
+    } else {
+        pokemon_logo = `${process.env.PUBLIC_URL}/images/pokemon.png`
+    };
 
     // whenever location changes, set expandNavbar to false to close navbar
     useEffect(() => {
