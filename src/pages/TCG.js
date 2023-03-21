@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useLocation} from "react-router-dom";
-import "../styles/Tcg.css";
+import "../styles/TCG.css";
 import tcgAPI from "../utils/tcgAPI";
 import TCGResults from "../components/TCGResults";
 import SearchBanner from "../components/SearchBanner";

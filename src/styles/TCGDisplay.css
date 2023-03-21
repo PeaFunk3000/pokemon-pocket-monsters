@@ -9,6 +9,20 @@
     text-shadow: -0.25vw 0 white, 0 0.25vw white, 0.25vw 0 white, 0 -0.25vw white;
 }
 
+.singleCard h2 {
+    font-family: var(--font-main);
+    font-size: 3vw;
+    margin: 0;
+    text-shadow: -0.25vw 0 white, 0 0.25vw white, 0.25vw 0 white, 0 -0.25vw white;
+}
+
+.singleCard h3 {
+    font-family: var(--font-main);
+    font-size: 2vw;
+    margin: 0;
+    text-shadow: -0.25vw 0 white, 0 0.25vw white, 0.25vw 0 white, 0 -0.25vw white;
+}
+
 .back {
     border-radius: 5px;
     font-size: 1.5rem;
@@ -16,4 +30,12 @@
     color: var(--first-color);
     cursor: pointer;
   }
+
+  .priceChart {
+    background: #f5f5f5;
+    border-radius: 5px;
+    position: relative !important;
+    width: 500px !important;
+    height: 500px !important;
+}
   

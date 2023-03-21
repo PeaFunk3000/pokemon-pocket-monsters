@@ -3,7 +3,6 @@ import Abilities from "./Abilities";
 import BarChart from "./BarChart";
 
 function PokedexSearch(props) {
-    console.log(props);
     return (
         <div className={props.display}>
             <div id="headingPoke">
@@ -20,8 +19,9 @@ function PokedexSearch(props) {
                     chartData={[props.resultsObj.hp, props.resultsObj.attack, props.resultsObj.defense, props.resultsObj.special_attack, props.resultsObj.special_defense, props.resultsObj.speed]}
                     width={50}
                     height={50}
-                    min={0}
                     max={160}
+                    boolean={false}
+                    color={"#30fb05"}
                     labels={["HP", "Att", "Def", "Sp.Att", "Sp.Def", "Speed"]}
                 />
             </div>
