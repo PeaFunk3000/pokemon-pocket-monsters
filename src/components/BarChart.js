@@ -1,6 +1,7 @@
-import React, { useState } from "react";
 import { Chart } from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
+
+console.log(Chart);
 
 const BarChart = (props) => {
   const labels = props.labels;

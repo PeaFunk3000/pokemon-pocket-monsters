@@ -11,7 +11,7 @@ const imgs = [
 export default function ImageShuffle() {
   return (
     <div id="bgHolder">
-          <img className="backgroundImg" src={imgs[Math.floor(Math.random() * imgs.length)]}/>
+          <img alt="pokemon background" className="backgroundImg" src={imgs[Math.floor(Math.random() * imgs.length)]}/>
     </div>
   )
 }
