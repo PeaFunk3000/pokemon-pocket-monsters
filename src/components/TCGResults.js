@@ -5,7 +5,7 @@ const TCGResults = (props) => {
   const navigate = useNavigate();
   return (
     <div
-      className="tcgHolder"
+      className="tcgHolder cursor-pointer"
       onClick={() => {
         navigate(`/trading-card-game/${props.resultsObj.id}`, {
           state: { result: props.resultsObj, history: props.tcgResult },
