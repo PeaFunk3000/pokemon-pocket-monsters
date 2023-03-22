@@ -29,7 +29,7 @@ const TCGDisplay = ({ route, navigate }) => {
       </div>
       <div id="cardmarketHolder">
         <div>
-          <h1 className="sectionHeading">Prices:</h1>
+          <h1 className="sectionHeading">Average Price</h1>
           <BarChart
             chartData={[card.result.cardmarket.prices.avg1,card.result.cardmarket.prices.avg7,card.result.cardmarket.prices.avg30,card.result.cardmarket.prices.trendPrice]}
             width={50}
@@ -40,13 +40,6 @@ const TCGDisplay = ({ route, navigate }) => {
             title="Cardmarket Price Trend"
             boolean={true}
           />
-        </div>
-        <div className="cardPrinting">
-          <h1 className="sectionHeading">Card Printing:</h1>  
-          <h2>Set:</h2>
-          <h3>{card.result.set.name}</h3>
-          <h2>No. Printed:</h2>
-          <h3>{card.result.set.total}</h3>
         </div>
       </div>
       <a href={card.result.cardmarket.url}>Buy on Cardmarket</a>
