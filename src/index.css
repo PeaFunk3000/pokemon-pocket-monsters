@@ -3,7 +3,6 @@
   --second-color: #ffcb05;
   --third-color: #1e3a8a;
   --font-main: 'webfont15ze';
-  --font-secondary: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @font-face {
@@ -18,7 +17,7 @@ body {
   }
 
 * {
-font-family: var(--font-secondary);
+font-family: 'webfont15ze';
 }
 
 .backgroundImg {

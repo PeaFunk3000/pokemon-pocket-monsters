@@ -3,6 +3,7 @@ button {
   background-color: var(--second-color);
   color: var(--first-color);
   cursor: pointer;
+  font-family: var(--font-main);
 }
 
 button:hover {
