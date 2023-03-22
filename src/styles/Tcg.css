@@ -10,9 +10,14 @@
     padding-bottom: 1rem;
 }
 
+.tcgResults img {
+    transition: 0.4s ease;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
 .tcgResults img:hover {
-    animation: shake 0.5;
-    animation-iteration-count: infinite;
+    transform: rotatex(50deg) rotatez(15deg) translatey(-50px)  translatez(-50px);
+    box-shadow: 0px 20px 60px rgba(0,0,0, 1);
 }
 
 
