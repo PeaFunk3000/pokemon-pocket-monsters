@@ -3,7 +3,9 @@ import pokeAPI from "../utils/pokeAPI";
 import "../styles/Pokedex.css";
 import PokedexSearch from "../components/PokedexSearch";
 import SearchBanner from "../components/SearchBanner";
+
 const pokemon_logo = `${process.env.PUBLIC_URL}/images/pokemon.png`;
+const pokedex = `${process.env.PUBLIC_URL}/images/pokedex.png`;
 
 function Pokedex() {
     const [pokeResult, setPokeResult] = useState();
@@ -116,6 +118,9 @@ function Pokedex() {
                 <div className="centreItems">
                     <h2 className="searchMsg">Please search for something</h2>
                 </div>
+                <div id="blankDex">
+                    <img src={pokedex}/>
+                    </div>
             </div>
         )
     }

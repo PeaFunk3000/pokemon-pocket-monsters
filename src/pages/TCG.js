@@ -4,7 +4,9 @@ import "../styles/Tcg.css";
 import tcgAPI from "../utils/tcgAPI";
 import TCGResults from "../components/TCGResults";
 import SearchBanner from "../components/SearchBanner";
+
 const pokemon_tcg_logo = `${process.env.PUBLIC_URL}/images/pokemon_tcg_logo.png`;
+const TCGcards = `${process.env.PUBLIC_URL}/images/TCGcard.png`;
 
 export default function TCG({ route, navigate }) {
     const location = useLocation();
@@ -115,6 +117,9 @@ export default function TCG({ route, navigate }) {
                 <div className="centreItems">
                     <h2 className="searchMsg">Please search for something</h2>
                 </div>
+                <div id="blankCard">
+                    <img src={TCGcards}/>
+                    </div>
             </div>
         )
     }
