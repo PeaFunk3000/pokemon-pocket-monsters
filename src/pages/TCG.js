@@ -25,7 +25,7 @@ export default function TCG({ route, navigate }) {
             setTcgResults(history.tcgResult)
         }
     },
-    []
+    [history]
   );
 
     const handleInputChange = event => {
@@ -97,7 +97,7 @@ export default function TCG({ route, navigate }) {
             <div className="App">
                 {searchBannerVar}
                 <div className="centreItems">
-                    <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
+                    <img alt="spinning ball" id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"}></img>
                 </div>
             </div>
         )
@@ -118,7 +118,7 @@ export default function TCG({ route, navigate }) {
                     <h2 className="searchMsg">Please search for something</h2>
                 </div>
                 <div id="blankCard">
-                    <img src={TCGcards}/>
+                    <img alt="back of pokemon card" src={TCGcards}/>
                     </div>
             </div>
         )
