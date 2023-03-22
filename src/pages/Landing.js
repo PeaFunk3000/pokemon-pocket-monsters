@@ -3,22 +3,14 @@ import "../styles/Landing.css";
 import Audio from "../components/Player";
 import Player from '../components/Player';
 
+const pokemonImg = `${process.env.PUBLIC_URL}/images/pokemonImg.png`;
+
 export default function Landing() {
   return (
     <div>
-       <div className="content">
-      <section className="rw-wrapper">
-        <h2 className="rw-sentence">
-          <span>POKEMON</span>
-          <div className="rw-words">
-              <span>Search for a Pokemon</span>
-              <span>Search for Trading Cards</span>
-             
-
-          </div>
-          <span>Gotta Catch 'Em All</span>
-      </h2>
-      </section>
+    <h1 id="pageTitle">Gotta Catch 'Em All!</h1>
+    <div id="landing">
+     <img src={pokemonImg}/>
     </div>
     </div>
     
