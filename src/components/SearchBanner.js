@@ -16,8 +16,8 @@ function SearchBanner(props) {
                 className="px-4 rounded"
                 
             />
-            <button type={null} id="submitBtn" className="mx-4 mb-6 rounded px-1" onClick={props.handleSubmitForm}>Submit</button>
-            <button type={null} id="clearBtn" className="rounded px-1" onClick={props.clearScreen}>Clear</button>
+            <button  onClick={props.handleSubmitForm}>Submit</button>
+            <button  onClick={props.clearScreen}>Clear</button>
         </div>
         </div>
     );
