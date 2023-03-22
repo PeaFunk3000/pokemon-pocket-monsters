@@ -54,7 +54,8 @@ padding-top: 3px;
   }
   
   .navbar a {
-    width: 100px;
+    align-self: center;
+    max-width: fit-content;
   }
   
 }
