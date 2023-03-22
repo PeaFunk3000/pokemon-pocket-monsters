@@ -15,5 +15,11 @@
     animation-iteration-count: infinite;
 }
 
+#blankCard {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+  }
+
 
  

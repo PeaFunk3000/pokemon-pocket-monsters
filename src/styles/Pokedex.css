@@ -87,6 +87,12 @@ button {
   padding: 1rem;
 }
 
+#blankDex {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
 #pokeInfo ul li {
   list-style-type: none;
   color: white;
