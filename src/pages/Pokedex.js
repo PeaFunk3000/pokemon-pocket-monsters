@@ -98,7 +98,7 @@ function Pokedex() {
             <div className="App">
                 {searchBannerVar}
                 <div className="centreItems">
-                    <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"></img>
+                    <img id="pokeball" src={process.env.PUBLIC_URL + "/images/pokeball.png"} alt="pokeball"/>
                 </div>
             </div>
         )
@@ -119,7 +119,7 @@ function Pokedex() {
                     <h2 className="searchMsg">Please search for something</h2>
                 </div>
                 <div id="blankDex">
-                    <img src={pokedex}/>
+                    <img alt="pokedex" src={pokedex}/>
                     </div>
             </div>
         )

@@ -9,6 +9,8 @@ const TCGDisplay = ({ route, navigate }) => {
   const location = useLocation();
   const { id } = useParams();
 
+  console.log(id);
+
   const card = location.state;
 
   console.log(card);
