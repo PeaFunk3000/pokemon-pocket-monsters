@@ -45,7 +45,7 @@ const TCGDisplay = ({ route, navigate }) => {
         </div>
       </div>
       <a href={card.result.cardmarket.url}>Buy on Cardmarket</a>
-      <button className="back" onClick={() => {
+      <button type={null} className="back" onClick={() => {
         locate("../trading-card-game", {state:{tcgResult:card.history}})}}>Back to Cards</button>
     </div>
   );

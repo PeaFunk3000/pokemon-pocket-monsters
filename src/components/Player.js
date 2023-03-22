@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../styles/Player.css"
 
 const pokemusic = [
   `${process.env.PUBLIC_URL}/PokemonCenter.mp3`,
@@ -34,10 +35,8 @@ const Player = ({ url }) => {
   const [playing, toggle] = useAudio(url);
 
   return (
-    <div lcass="player" className="player absolute top-5 left-3 ">
-    <div className="player">
-      <button onClick={toggle} className="rounded px-2" >{playing ? "Pause" : "Play" }</button>
-    </div>
+    <div className="player absolute top-5 left-3 ">
+      <button type={null} onClick={toggle} className="rounded px-2" >{playing ? "Pause" : "Play" }</button>
     </div>
   );
 };
