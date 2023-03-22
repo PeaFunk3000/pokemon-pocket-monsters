@@ -13,11 +13,13 @@
 .tcgResults img {
     transition: 0.4s ease;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    cursor:url('/public/images/poke_cursor.png'), pointer;
 }
 
 .tcgResults img:hover {
     transform: rotatex(50deg) rotatez(15deg) translatey(-50px)  translatez(-50px);
     box-shadow: 0px 20px 60px rgba(0,0,0, 1);
+    
 }
 
 #blankCard {

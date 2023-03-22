@@ -6,6 +6,8 @@
     cursor: pointer;
     font-family: var(--font-main);
     border-radius: 5px;
+    cursor:url('/public/images/poke_cursor.png'), pointer;
+      
 }
 
 .player {

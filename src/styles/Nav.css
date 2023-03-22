@@ -4,6 +4,7 @@
   margin: 20px;
   font-size: 25px;
   font-family: var(--font-main);
+  cursor:url('/public/images/poke_cursor.png'), pointer;
 }
 
 .toggleButton {
@@ -23,11 +24,12 @@
   background-color: transparent;
   border: none;
   color: var(--second-color);
-  cursor: pointer; 
+  cursor:url('/public/images/poke_cursor.png'), pointer;
 }
 #pokemonSearchInput{
 line-height: 36px;
 padding-top: 3px;
+cursor:url('/public/images/poke_cursor.png'), pointer;
 }
 #open {
   height: 100vh;
@@ -37,6 +39,7 @@ padding-top: 3px;
   flex-direction: column;
   justify-content: flex-start;
   margin-top: 100px;
+  
 }
 
 #open a {
