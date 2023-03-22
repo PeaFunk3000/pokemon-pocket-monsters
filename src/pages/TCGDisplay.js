@@ -16,40 +16,42 @@ const TCGDisplay = ({ route, navigate }) => {
   return (
     <div className="singleCard">
       <div className="cardTitle">
-      <h1>{card.result.name}</h1>
-      <img
-        id="tcgImage"
-        src={
-          typeof card.result.images.small === "undefined"
-            ? ""
-            : card.result.images.small
-        }
-        alt="tcg card"
-      ></img>
+        <h1 id="cardTitle">{card.result.name}</h1>
+        <img
+          id="tcgImage"
+          src={
+            typeof card.result.images.small === "undefined"
+              ? ""
+              : card.result.images.small
+          }
+          alt="tcg card"
+        ></img>
       </div>
-      <div className="prices">
-      <h1>Price</h1>
-      <BarChart
-                    chartData={[card.result.cardmarket.prices.avg1,card.result.cardmarket.prices.avg7,card.result.cardmarket.prices.avg30,card.result.cardmarket.prices.trendPrice]}
-                    width={50}
-                    height={50}
-                    labels={["1Day", "7Day", "30Day", "Trend"]}
-                    name={"priceChart"}
-                    unit="£"
-                    title="Cardmarket Price Trend"
-                    boolean={true}
-                />
+      <div id="cardmarketHolder">
+        <div>
+          <h1 className="sectionHeading">Prices:</h1>
+          <BarChart
+            chartData={[card.result.cardmarket.prices.avg1,card.result.cardmarket.prices.avg7,card.result.cardmarket.prices.avg30,card.result.cardmarket.prices.trendPrice]}
+            width={50}
+            height={50}
+            labels={["1Day", "7Day", "30Day", "Trend"]}
+            name={"priceChart"}
+            unit="£"
+            title="Cardmarket Price Trend"
+            boolean={true}
+          />
+        </div>
+        <div className="cardPrinting">
+          <h1 className="sectionHeading">Card Printing:</h1>  
+          <h2>Set:</h2>
+          <h3>{card.result.set.name}</h3>
+          <h2>No. Printed:</h2>
+          <h3>{card.result.set.total}</h3>
+        </div>
+      </div>
       <a href={card.result.cardmarket.url}>Buy on Cardmarket</a>
-      </div>
-      <div className="cardPrinting">
-      <h1>Card Printing</h1>  
-      <h2>Set</h2>
-      <h3>{card.result.set.name}</h3>
-      <h2>No. Printed</h2>
-      <h3>{card.result.set.total}</h3>
       <button className="back" onClick={() => {
         locate("../trading-card-game", {state:{tcgResult:card.history}})}}>Back to Cards</button>
-      </div>
     </div>
   );
 };
