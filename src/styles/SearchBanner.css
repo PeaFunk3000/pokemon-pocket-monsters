@@ -1,13 +1,13 @@
-
-
-
-
 button {
-  /* border-radius: 5px; */
   font-size: 1.5rem;
   background-color: var(--second-color);
   color: var(--first-color);
   cursor: pointer;
+}
+
+button:hover {
+  background: var(--first-color);
+  color: var(--second-color);
 }
 
 #searchLabel {
