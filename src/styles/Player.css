@@ -7,9 +7,8 @@
     font-family: var(--font-main);
     border-radius: 5px;
     cursor:url('/public/images/poke_cursor.png'), pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
       
-}
-
-.player {
-    padding:10px
 }
