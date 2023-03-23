@@ -14,7 +14,7 @@ const BarChart = (props) => {
     "#F20089",
   ];
   const data_values = props.chartData;
-  const max = Math.max(...data_values) + Math.max(...data_values) * 0.10;
+  const max = Math.ceil(Math.max(...data_values) + Math.max(...data_values) * 0.10);
   const boolean = props.boolean;
   const unit = props.unit ? props.unit : "";
 
@@ -59,19 +59,19 @@ const BarChart = (props) => {
         min: 0,
         max: boolean ? max : 160,
         ticks: {
-          // font :{
-          //     size: 20
-          // },
-          display: false,
-          // color: "#000000",
-          // stepSize: 20
+          font :{
+              size: 12
+          },
+          display: props.boolean,
+          color: "#000000",
+          stepSize: boolean ? 1 : 20
         },
         grid: {
           lineWidth: 5,
           tickLength: 0,
           color: props.color,
           z: 10,
-          drawBorder: false,
+          drawBorder: props.boolean,
         },
       },
       x: {

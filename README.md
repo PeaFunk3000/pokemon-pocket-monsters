@@ -81,7 +81,9 @@ Then follow the install requirements in the package.json using `npm install`.
 
 ## Landing Page
 
+
 ![Screenshot 2023-03-23 at 12 11 57](https://user-images.githubusercontent.com/109441410/227199437-d3be1505-6068-45d6-8262-f517c93e1c83.png) 
+
 
 
 ## Pokédex
