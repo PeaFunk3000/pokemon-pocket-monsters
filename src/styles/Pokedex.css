@@ -101,3 +101,64 @@ button {
 }
 /* Pokemon info end */
 /****************/
+
+
+@media only screen and (max-width: 385px) {
+  /****************/
+  /* pokedex start */
+  #imgHolder {
+    position: relative;
+    top: 50px;
+    /* min-width: 200px;
+    width: 95vw;
+    max-width: 750px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; */
+  }
+
+  #pokedexImg {
+    rotate: 90deg;
+    position: relative;
+    filter: drop-shadow(0.6em 0.6em 0.2em);
+    margin-bottom: 2rem;
+   
+  }
+
+  #pokemonImg {
+      position: absolute;
+      top: -10%;
+      left: 27%;
+      width: 40%;
+      filter: drop-shadow(0.40em 0.40em 0.3em grey);
+  }
+
+  #statsChart {
+      position: absolute;
+      top: 63%;
+      left: 23%;
+      width: 44%;
+      height: 49%;
+  }
+
+  #statsChart canvas {
+    margin: 0;
+  }
+
+  #pokeInfo {
+    top: 80px;
+    position: relative;
+    min-width: 200px;
+    width: 95vw;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    border: 6px solid var(--second-color);
+    border-radius: 10px;
+    background-color: var(--first-color);
+    padding: 1rem;
+  }
+  /* pokedex end */
+  /****************/
+}
