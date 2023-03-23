@@ -75,23 +75,35 @@ Install folder structure as is, into a root directory.
 Then follow the install requirements in the package.json using `npm install`.
 `npm run build` - Builds the app for production to the `build` folder.\
 
+
 # Screenshots
 
-Still needs to be completed below
+
 ## Landing Page
- 
+
+
+![Screenshot 2023-03-23 at 12 11 57](https://user-images.githubusercontent.com/109441410/227199437-d3be1505-6068-45d6-8262-f517c93e1c83.png) 
+
+
 
 ## Pokédex
+
+![Pokedex](https://user-images.githubusercontent.com/109441410/227199084-b4ac487d-25ec-4627-9ad3-b368f0ef713f.png) 
 
 
 ## Trading Card Game (TCG)
 
+![TCG](https://user-images.githubusercontent.com/109441410/227200183-174e1de1-695a-42c1-821c-41f47ba686dd.png)
+
 
 ## TCG Card
+
+![Screenshot 2023-03-23 at 12 17 05](https://user-images.githubusercontent.com/109441410/227200623-f1e5917b-c817-47e7-b372-7e74f4315dd0.png) 
 
 
 # URL
 
+https://pokestop.netlify.app/#/ 
 
 # License
 
