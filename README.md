@@ -79,7 +79,7 @@ Then follow the install requirements in the package.json using `npm install`.
 
 Still needs to be completed below
 ## Landing Page
-screencapture-pokestop-netlify-app-2023-03-23-11_40_31.pdf 
+ 
 
 ## Pokédex
 
