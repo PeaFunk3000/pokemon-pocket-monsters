@@ -19,6 +19,7 @@ const TCGDisplay = ({ route, navigate }) => {
     <div className="singleCard">
       <div className="cardTitle">
         <h1 id="cardTitle">{card.result.name}</h1>
+        <h2 id="setTitle">{card.result.set.name} Set</h2>
         <img
           id="tcgImage"
           src={
