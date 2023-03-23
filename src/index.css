@@ -17,6 +17,10 @@ body {
   }
 
 * {
+    cursor:url('/public/images/jigglypuff.png'), default;
+  }
+
+* {
 font-family: 'webfont15ze';
 }
 

@@ -37,6 +37,7 @@
     height: 50vh;
     max-width: 90vw;
     max-height: 90vh;
+    
 }
 
 #cardmarketHolder {
@@ -50,6 +51,7 @@
     padding: 1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    cursor:url('/public/images/poke_cursor.png'), pointer;
 }
 
 .sectionHeading {
