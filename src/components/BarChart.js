@@ -16,8 +16,7 @@ const BarChart = (props) => {
   const data_values = props.chartData;
   const max = Math.max(...data_values) + Math.max(...data_values) * 0.10;
   const boolean = props.boolean;
-
-
+  const unit = props.unit ? props.unit : "";
 
   const data = {
     labels: labels,
@@ -50,7 +49,7 @@ const BarChart = (props) => {
       tooltip: {
         callbacks: {
           label: function (context) {
-            return props.unit + context.parsed.y;
+            return unit + context.parsed.y;
           },
         },
       },

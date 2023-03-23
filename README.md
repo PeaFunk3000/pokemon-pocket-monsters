@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# pokemon_pocket_monsters
+## Overview
+* pokemon_pocket_monsters is a group project as part of the Front-End Web Development Bootcamp.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+On this site you can:
+* Search for Pokémon and see information about them
+* Search for Pokémon TCG cards and get price information from cardmarket
 
-## Available Scripts
+## Table of Contents (Optional)
 
-In the project directory, you can run:
+- [Group](#Group)
+- [Technical&nbsp;Acceptance&nbsp;Criteria](#Technical&nbsp;Acceptance&nbsp;Criteria)
+- [Technologies&nbsp;Used](#Technologies&nbsp;Used)
+- [API&nbsp;Servers&nbsp;Used](#API&nbsp;Servers&nbsp;Used)
+- [User&nbsp;Interface&nbsp;Design](#User&nbsp;Interface&nbsp;Design)
+- [Installation](#Installation)
+- [Screenshots](#Screenshots)
+- [URL](#URL)
+- [License](#License)
 
-### `npm start`
+# Group
+## Group Name: Gotta Poke'em All
+* Adam
+* Aaron
+* Tom
+* Bilgin
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Technical&nbsp;Acceptance&nbsp;Criteria
+* Use React.
+* Use Node.js.
+* Have both GET routes for retrieving and adding new data.
+* Be deployed using Netlify.
+* Use at least two libraries, packages, or technologies that we haven't discussed.
+* Have a polished front end/UI.
+* Meet good quality coding standards (indentation, scoping, naming).
+* Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Technologies&nbsp;Used
+* HTML5
+* CSS3 
+* JavaScript
+* React
+* Tailwind CSS
+* 2 API's (Third Party API'S)
+* Chart.js
 
-### `npm test`
+# API&nbsp;Servers&nbsp;Used
+## The PokéAPI
+We used the following API to pull information about individual Pokémon and images
+| API Name    | API URL         |
+| ----------- | -----------     |
+| PokéAPI       | https://pokeapi.co/ |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Pokémon TCG
+We used the following API to gather TCG card images and cardmarket price trends
+| API Name    | API URL         |
+| ----------- | -----------         |
+| Pokémon TCG API       | https://pokemontcg.io/ |
 
-### `npm run build`
+# User&nbsp;Interface&nbsp;Design
+## Color Palette
+| Color       | Color Code          |
+| ----------- | -----------         |
+| Dark Blue       | #021939             |
+| Yellow       | #ffcb05             |
+| Light Blue        | #1e3a8a|
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Font 
+| Font-Family    | API          |
+| ----------- | -----------         |
+| webfont15ze       | https://get.fontspace.co/webfont/15ze/N2RkMTc5ZWI4ZWM4NGM5YmFlZjJmMDkyMjVjZWJiZWMub3Rm/pocket-monk.woff |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Installation
+Install folder structure as is, into a root directory.
+Then follow the install requirements in the package.json using `npm install`.
+`npm run build` - Builds the app for production to the `build` folder.\
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Screenshots
 
-### `npm run eject`
+Still needs to be completed below
+## Landing Page
+https://user-images.githubusercontent.com/117782725/217638550-adf7a13a-185e-4a0a-a6e0-99d14146c7f9.mp4
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## League Table Page 
+https://user-images.githubusercontent.com/117782725/217642157-8d447bdd-9063-4904-ba9c-af8acc4646b8.mp4
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Fixture / Schedule Page
+https://user-images.githubusercontent.com/117782725/217636937-5fcbcee5-4f3d-4efa-8d5e-4b1be7e69b25.mp4
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Player Search Page
+https://user-images.githubusercontent.com/117782725/217638449-668613f0-7c4f-4f50-a349-907531c7a1b3.mp4
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# URL
+https://main--tubular-duckanoo-849bcd.netlify.app
 
-## Learn More
+# License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+MIT License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Copyright (c) 2023 Aaron Lapworth, Adam Seville, Tom Brine and Bilgin Celiktas
 
-### Code Splitting
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
