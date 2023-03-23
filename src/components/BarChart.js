@@ -67,7 +67,7 @@ const BarChart = (props) => {
           // stepSize: 20
         },
         grid: {
-          lineWidth: 3,
+          lineWidth: 5,
           tickLength: 0,
           color: props.color,
           z: 10,
@@ -83,7 +83,7 @@ const BarChart = (props) => {
           lineWidth: 0,
         },
         grid: {
-          lineWidth: 3,
+          lineWidth: 5,
           tickLength: 0,
           color: props.color,
           z: 10,
