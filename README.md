@@ -79,19 +79,19 @@ Then follow the install requirements in the package.json using `npm install`.
 
 Still needs to be completed below
 ## Landing Page
-https://user-images.githubusercontent.com/117782725/217638550-adf7a13a-185e-4a0a-a6e0-99d14146c7f9.mp4
+screencapture-pokestop-netlify-app-2023-03-23-11_40_31.pdf 
 
-## League Table Page 
-https://user-images.githubusercontent.com/117782725/217642157-8d447bdd-9063-4904-ba9c-af8acc4646b8.mp4
+## Pokédex
 
-## Fixture / Schedule Page
-https://user-images.githubusercontent.com/117782725/217636937-5fcbcee5-4f3d-4efa-8d5e-4b1be7e69b25.mp4
 
-## Player Search Page
-https://user-images.githubusercontent.com/117782725/217638449-668613f0-7c4f-4f50-a349-907531c7a1b3.mp4
+## Trading Card Game (TCG)
+
+
+## TCG Card
+
 
 # URL
-https://main--tubular-duckanoo-849bcd.netlify.app
+
 
 # License
 
